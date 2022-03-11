@@ -1,11 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import App from './App';
 
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <h1>Welcome To React Js</h1>
+   <App/>
   </React.StrictMode>,
   document.getElementById('root')
 );
