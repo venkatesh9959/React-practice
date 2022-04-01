@@ -1,4 +1,5 @@
 interface ButtonProps {
+  //@interface typeScript checking all values, and  the props definitions for Button Component
   type?: "submit" | "reset" | "button";
   value?: string;
   ButtonText?: string;
@@ -7,15 +8,11 @@ interface ButtonProps {
   addclass?: string;
 }
 /**
- * 
- * @interface typeScript checking all values, and  the props definitions for Button Component
- * @type propertie used for Button Type
- * @addclasses propertie is used for  Button ClassName
- * @value propertie is used for  Button value
- * @onClickHandler properties is Button onClick  excute any function
- * @disable properties is used Button disable 
- * 
- * @
+ * @prop {string} type- propertie used for Button Type
+ * @prop {string} addclasses- propertie used for Button ClassName
+ * @prop {string} value-propertie used for Button value
+ * @prop {function} onClickHandler-properties for Button onClick  excute any function
+ * @prop {boolean}disable -properties used for Button ClassName
  */
 
 const Button = (props: ButtonProps) => {
@@ -37,5 +34,5 @@ export default Button;
 /**
  *  Button  Component Is Used  for Button Fields
  *  It used as Cancel  Button or Submit button or Reset button
- * 
+ *
  */
