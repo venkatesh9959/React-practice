@@ -1,16 +1,7 @@
 import React from "react";
 
-interface Inputprops {
-  //@interface typeScript checking all values, and  the props definitions for Button Component
-  labelName?: string;
-  type?: "text" | "password" | "date" | "number" | "email";
-  addclasses?: string;
-  placeHolderText?: string;
-  value?: string;
-  onChageHandler?: any;
-}
 /**
- *
+ * @interface typeScript checking all values, and  the props definitions for Button Component
  * @prop {string} type - propertie used for Input filed Type
  * @prop {string} addclasses - propertie  used for  Input filed ClassName
  * @prop {string} PlaceHolderText - propertie used for  Input filed placeHolder
@@ -19,6 +10,21 @@ interface Inputprops {
  *
  * @
  */
+
+/**
+ *  InputText  Component Is Used  for the input fields
+ *  It like password and gmail and text and number fields used resuble fields
+ *
+ */
+interface Inputprops {
+  labelName?: string;
+  type?: "text" | "password" | "date" | "number" | "email";
+  addclasses?: string;
+  placeHolderText?: string;
+  value?: string;
+  onChageHandler?: any;
+}
+
 const InputText = (props: Inputprops) => {
   const { type, addclasses, placeHolderText, value, onChageHandler } = props;
   return (
@@ -33,9 +39,3 @@ const InputText = (props: Inputprops) => {
 };
 
 export default InputText;
-
-/**
- *  InputText  Component Is Used  for the input fields
- *  It like password and gmail and text and number fields used resuble fields
- *
- */
