@@ -11,11 +11,7 @@ import React from "react";
  * @
  */
 
-/**
- *  InputText  Component Is Used  for the input fields
- *  It like password and gmail and text and number fields used resuble fields
- *
- */
+
 interface Inputprops {
   labelName?: string;
   type?: "text" | "password" | "date" | "number" | "email";
@@ -24,6 +20,11 @@ interface Inputprops {
   value?: string;
   onChageHandler?: any;
 }
+/**
+ *  InputText  Component Is Used  for the input fields
+ *  It like password and gmail and text and number fields used resuble fields
+ *
+ */
 
 const InputText = (props: Inputprops) => {
   const { type, addclasses, placeHolderText, value, onChageHandler } = props;

@@ -6,20 +6,21 @@
  * @prop {function} onClickHandler-properties for Button onClick  excute any function
  * @prop {boolean}disable -properties used for Button ClassName
  */
+
+interface ButtonProps {
+  type?: "submit" | "reset" | "button";
+  value?: string;
+  ButtonText?: string;
+  onClickHandler?: any;
+  disable?: boolean;
+  addclass?: string;
+}
+
 /**
  *  Button  Component Is Used  for Button Fields
  *  It used as Cancel  Button or Submit button or Reset button
  *
  */
-interface ButtonProps {
-  type?: "submit" | "reset" | "button";
-  value?: string;
-  ButtonText?: string;
-  onClickHandler?: () => void;
-  disable?: boolean;
-  addclass?: string;
-}
-
 const Button = (props: ButtonProps) => {
   const { type, value, ButtonText, onClickHandler, disable, addclass } = props;
   return (
