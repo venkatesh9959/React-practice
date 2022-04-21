@@ -1,41 +1,39 @@
 import React, { useState } from "react";
-import InputText from "../Components/InputText"
-import Button from "../Components/Button";
+import InputText from "../../Components/InputText"
+import Button from "../../Components/Button";
 import "./Login.scss";
 import { Link,useNavigate} from "react-router-dom";
 import axios from "axios";
+import { Config } from "../../AppConfig";
 
 const Login = () => {
-    const [open, setOpen] = React.useState(false);
-    const handleToggle = () => {
-        setOpen(!open);
-    };
-    const handleClose = () => {
-        setOpen(false);
-    };
-    const history = useNavigate ();
+    const [open, setOpen] = useState(false);
     const [login, setLogin] = useState<any>({});
-    const onchageLogin = (key: string, value: string) => {
+    const history = useNavigate ();
+    const onLoginChange = (key: string, value: string) => {
         login[key] = value;
         setLogin(Login);
     };
+    const showModalPopup = () => {
+        setOpen(!open);
+    };
 
     const MovetoDashboard = () => {
-        history("/dashboard");
+       history("/dashboard");
     };
 
     const onSubmit = (e: any) => {
         e.preventDefault();
 
         var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
-        const { Email, Password } = Login;
+        const { Email, Password } = login;
         const LoginDetails = { Email, Password };
-        if (Email == undefined && Password == undefined) {
+        if (!Email && !Password) {
             alert("blank values are not allowed");
             return false;
         } else if (emailPattern.test(Email)) {
             const url = `${Config.app.locBaseUrl}api/Auth/UserLogin`;
-            handleToggle();
+            showModalPopup();
 
             axios.post(url, LoginDetails).then((response: any) => {
                 if (response.data.IsSuccess === 1) {
@@ -77,6 +75,7 @@ const Login = () => {
                                                 "../../../icons/logo_print@2x.png"
                                             }
                                             style={{ marginTop: "50px" }}
+                                            alt="Logo"
                                         />
                                     </div>
                                     <div className="card-content">
@@ -91,7 +90,7 @@ const Login = () => {
                                                         "form-control-lg input-lg"
                                                     }
                                                     onChageHandler={(e: any) =>
-                                                        onchageLogin(
+                                                        onLoginChange(
                                                             "Email",
                                                             e.target.value
                                                         )
@@ -108,7 +107,7 @@ const Login = () => {
                                                     }
                                                     //   value={Login.password}
                                                     onChageHandler={(e: any) =>
-                                                        onchageLogin(
+                                                        onLoginChange(
                                                             "Password",
                                                             e.target.value
                                                         )
@@ -143,8 +142,8 @@ const Login = () => {
                                                 <Button
                                                     type="submit"
                                                     addclass="btn btn-outline-info btn-lg btn-block form-group"
-                                                    ButtonText="Login"
-                                                    onClickHandler={onSubmit}
+                                                    buttonText="Login"
+                                                    onClickHandler={()=>onSubmit}
                                                 />
 
                                                 <Link
@@ -153,7 +152,7 @@ const Login = () => {
                                                 >
                                                     <Button
                                                         addclass="btn btn-outline-danger btn-lg btn-block form-group"
-                                                        ButtonText="Register"
+                                                        buttonText="Register"
                                                     />
                                                 </Link>
                                             </div>

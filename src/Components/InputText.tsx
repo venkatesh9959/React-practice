@@ -11,7 +11,6 @@ import React from "react";
  * @
  */
 
-
 interface Inputprops {
   labelName?: string;
   type?: "text" | "password" | "date" | "number" | "email";

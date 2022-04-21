@@ -1,3 +1,4 @@
+import React from "react"
 /**
  * @interface typeScript checking all values, and  the props definitions for Button Component
  * @prop {string} type- propertie used for Button Type
@@ -10,8 +11,8 @@
 interface ButtonProps {
   type?: "submit" | "reset" | "button";
   value?: string;
-  ButtonText?: string;
-  onClickHandler?: any;
+  buttonText?: string;
+  onClickHandler?: ()=>void;
   disable?: boolean;
   addclass?: string;
 }
@@ -22,7 +23,7 @@ interface ButtonProps {
  *
  */
 const Button = (props: ButtonProps) => {
-  const { type, value, ButtonText, onClickHandler, disable, addclass } = props;
+  const { type, value, buttonText, onClickHandler, disable, addclass } = props;
   return (
     <button
       type={type || "button"}
@@ -31,7 +32,7 @@ const Button = (props: ButtonProps) => {
       disabled={disable}
       className={`btn ${addclass && addclass}`}
     >
-      {ButtonText}
+      {buttonText}
     </button>
   );
 };
