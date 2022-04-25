@@ -151,7 +151,7 @@ const Login = () => {
                                                     className="card-link"
                                                 >
                                                     <Button
-                                                        addclass="btn btn-outline-danger btn-lg btn-block form-group"
+                                                        addclass="btn-primary"
                                                         buttonText="Register"
                                                     />
                                                 </Link>
