@@ -1,7 +1,6 @@
 import React, { useState } from "react";
-import InputText from "../../Components/InputText"
-import Button from "../../Components/Button";
-import "./Login.scss";
+import InputText from "../../components/InputText"
+import Button from "../../components/Button";
 import { Link,useNavigate} from "react-router-dom";
 import axios from "axios";
 import { Config } from "../../AppConfig";
@@ -141,7 +140,7 @@ const Login = () => {
 
                                                 <Button
                                                     type="submit"
-                                                    addclass="btn btn-outline-info btn-lg btn-block form-group"
+                                                    addClass="btn btn-outline-info btn-lg btn-block form-group"
                                                     buttonText="Login"
                                                     onClickHandler={()=>onSubmit}
                                                 />
@@ -151,7 +150,7 @@ const Login = () => {
                                                     className="card-link"
                                                 >
                                                     <Button
-                                                        addclass="btn-primary"
+                                                        addClass="btn-primary"
                                                         buttonText="Register"
                                                     />
                                                 </Link>

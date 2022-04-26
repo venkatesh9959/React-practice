@@ -14,7 +14,7 @@ interface ButtonProps {
   buttonText?: string;
   onClickHandler?: ()=>void;
   disable?: boolean;
-  addclass?: string;
+  addClass?: string;
 }
 
 /**
@@ -23,14 +23,14 @@ interface ButtonProps {
  *
  */
 const Button = (props: ButtonProps) => {
-  const { type, value, buttonText, onClickHandler, disable, addclass } = props;
+  const { type, value, buttonText, onClickHandler, disable, addClass } = props;
   return (
     <button
       type={type || "button"}
       value={value}
       onClick={onClickHandler}
       disabled={disable}
-      className={`btn ${addclass && addclass}`}
+      className={`btn ${addClass && addClass}`}
     >
       {buttonText}
     </button>

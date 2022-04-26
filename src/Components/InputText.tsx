@@ -17,7 +17,7 @@ interface Inputprops {
   addclasses?: string;
   placeHolderText?: string;
   value?: string;
-  onChageHandler?: any;
+  onChageHandler?: (e:any)=>void;
 }
 /**
  *  InputText  Component Is Used  for the input fields
@@ -29,8 +29,8 @@ const InputText = (props: Inputprops) => {
   const { type, addclasses, placeHolderText, value, onChageHandler } = props;
   return (
     <input
-      type={type}
-      className={`btn ${addclasses && addclasses}`}
+      type={type || "text"}
+      className={`form-control ${addclasses && addclasses}`}
       placeholder={placeHolderText}
       value={value}
       onChange={onChageHandler}
