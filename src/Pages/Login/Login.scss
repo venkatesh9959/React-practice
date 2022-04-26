@@ -1,0 +1,70 @@
+.login-container {
+    background-color: #4a3b9e;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "poppins";
+}
+
+.login-section {
+    background-color: #ffffff;
+    padding: 30px;
+    font-family: "poppins";
+}
+
+.form-simple input[type="text"] {
+    margin-bottom: -1px;
+
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+    font-family: "poppins";
+}
+
+.form-simple input[type="mail"] {
+    margin-bottom: -1px;
+
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+    font-family: "poppins";
+}
+
+.form-simple input[type="password"] {
+    margin-bottom: 10px;
+
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    font-family: "poppins";
+}
+
+.help-block ul {
+    margin: 0 !important;
+    padding: 0 !important;
+    font-family: "poppins";
+}
+.help-block ul li {
+    list-style: none;
+    font-family: "poppins";
+}
+
+#root {
+    height: 100vh;
+}
+
+.form-group {
+    margin-bottom: 30px;
+    font-family: "poppins";
+}
+.card-font {
+    font-family: "poppins";
+}
+
+.MuiLinearProgress-colorPrimary {
+    color: #080808;
+}
+
+.modelTitle{
+    color: red;
+}
